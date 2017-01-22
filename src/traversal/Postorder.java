@@ -33,16 +33,21 @@ public class Postorder {
                 break;
             }
             cur = s.pop();
-            if(cur.right == prev) {
+            if(prev != null && cur.right == prev) {
                 System.out.print(cur.data);
                 prev = cur;
                 continue;
             }
 
-            if(cur.left == prev) {
-                s.push(cur);
-                s.push(cur.right);
-                prev = null;
+            if(prev != null && cur.left == prev) {
+
+                if(cur.right != null) {
+                    s.push(cur);
+                    s.push(cur.right);
+                } else {
+                    System.out.print(cur.data);
+                }
+                prev = cur;
                 continue;
             }
 
