@@ -1,5 +1,5 @@
 import java.util.Stack;
-import java.util.Arrays;
+import traversal.*;
 
 /**
  * Created by hgshivakumar on 22/01/17.
@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class Preorder {
     public static void main(String [] args) {
-        Node n = new Tree().create();
+        Node n = new NodeInitializer().create();
         recursivePreOrder(n);
         System.out.print("\n");
         iterativePreOrder(n);
